@@ -5,6 +5,7 @@ import java.awt.event.KeyListener;
 public class MyFrame extends JFrame implements KeyListener{
 
 	Draw drawing;
+	Player player;
 
 	public MyFrame(){
 		this.drawing = new Draw();
@@ -12,27 +13,27 @@ public class MyFrame extends JFrame implements KeyListener{
 
 	public void keyPressed(KeyEvent e){
 		if(e.getKeyCode() == KeyEvent.VK_UP){
-			drawing.moveUp();
-			System.out.println("pos: " + drawing.x + ", " + drawing.y);
+			player.moveUp();
+			System.out.println("pos: " + player.x + ", " + player.y);
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-			drawing.moveRight();
-			System.out.println("pos: " + drawing.x + ", " + drawing.y);
+			player.moveRight();
+			System.out.println("pos: " + player.x + ", " + player.y);
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_DOWN){
-			drawing.moveDown();
-			System.out.println("pos: " + drawing.x + ", " + drawing.y);
+			player.moveDown();
+			System.out.println("pos: " + player.x + ", " + player.y);
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_LEFT){
-			drawing.moveLeft();
-			System.out.println("pos: " + drawing.x + ", " + drawing.y);
+			player.moveLeft();
+			System.out.println("pos: " + player.x + ", " + player.y);
 		}
 		else if(e.getKeyCode() == KeyEvent.VK_SPACE){
-			drawing.attack();
+			player.attack();
 			System.out.println("attack");
 		}
 
-		drawing.reloadImage();
+		player.reloadImage();
 	}
 
 	public void keyReleased(KeyEvent e){
